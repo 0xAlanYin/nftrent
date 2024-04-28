@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.32.0",
-    "@web3modal/wagmi": "^4.1.10",
+    "@walletconnect/web3wallet": "^1.11.2",
+    "@web3modal/wagmi": "^4.1.11",
     "classnames": "^2.5.1",
     "lodash": "^4.17.21",
     "next": "14.2.1",
