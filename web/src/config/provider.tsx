@@ -1,9 +1,7 @@
 import { mainnet, sepolia } from 'wagmi/chains'
 import { defaultWagmiConfig } from '@web3modal/wagmi/react/config'
 
-export const projectId = process.env.NEXT_PUBLIC_PROJECT_ID || "";
-
-if (!projectId) throw new Error('Project ID is not defined')
+export const projectId = process.env.NEXT_PUBLIC_PROJECT_ID || "60f7a70f81488d615ba7f46086b12103";
 
 export const metadata = {
     name: "Next Starter Template",
