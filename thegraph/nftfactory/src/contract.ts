@@ -54,6 +54,8 @@ export function handleTransfer(event: TransferEvent): void {
   )
   tokenInfo.ca = event.address
   tokenInfo.tokenId = event.params.tokenId
+  tokenInfo.tokenURL = "ipfs://QmbveAod8raJyhDJYJd3E4pAiXdMcVQn4GC3bejqesdobd"
+  tokenInfo.name = "CiToken"
   tokenInfo.owner = event.params.to
   tokenInfo.blockNumber = event.block.number
   tokenInfo.blockTimestamp = event.block.timestamp
