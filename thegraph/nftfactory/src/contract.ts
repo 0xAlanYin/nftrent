@@ -49,15 +49,15 @@ export function handleTransfer(event: TransferEvent): void {
   entity.transactionHash = event.transaction.hash
   entity.save()
 
-  // let tokenInfo = new TokenInfo(
-  //   event.transaction.hash.concatI32(event.logIndex.toI32()),
-  // )
-  // tokenInfo.ca = event.address
-  // tokenInfo.tokenId = event.params.tokenId
-  // tokenInfo.owner = event.params.to
-  // tokenInfo.blockNumber = event.block.number
-  // tokenInfo.blockTimestamp = event.block.timestamp
-  // tokenInfo.transactionHash = event.transaction.hash
-  // tokenInfo.save()
+  let tokenInfo = new TokenInfo(
+    event.transaction.hash.concatI32(event.logIndex.toI32()),
+  )
+  tokenInfo.ca = event.address
+  tokenInfo.tokenId = event.params.tokenId
+  tokenInfo.owner = event.params.to
+  tokenInfo.blockNumber = event.block.number
+  tokenInfo.blockTimestamp = event.block.timestamp
+  tokenInfo.transactionHash = event.transaction.hash
+  tokenInfo.save()
 }
 
