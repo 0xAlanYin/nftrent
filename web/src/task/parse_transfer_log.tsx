@@ -1,4 +1,4 @@
-// 任务描述：使用 Viem 解析 以太坊USDT的 Trasnfer 日志
+// 任务描述：使用 Viem 解析 以太坊USDC的 Trasnfer 日志
 
 import { log } from 'console'
 import { forEach } from 'lodash'
@@ -16,7 +16,8 @@ const publicClient = createPublicClient({
 async function pullAndParseLog() {
     const endBlockNumber = await publicClient.getBlockNumber()
     const filter = await publicClient.createEventFilter({
-        address: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
+         // USDC 合约地址
+         address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
         event: parseAbiItem("event Transfer(address indexed from, address indexed to, uint256 value)"),
         fromBlock: BigInt(endBlockNumber) - BigInt(100),
         // 获取链上最近100个区块链内的 USDC Transfer记录

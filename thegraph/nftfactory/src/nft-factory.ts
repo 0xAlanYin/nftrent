@@ -1,13 +1,15 @@
 import {
   NFTCreated as NFTCreatedEvent,
   NFTRegesitered as NFTRegesiteredEvent,
-  OwnershipTransferred as OwnershipTransferredEvent
+  OwnershipTransferred as OwnershipTransferredEvent,
 } from "../generated/NFTFactory/NFTFactory"
 import {
   NFTCreated,
   NFTRegesitered,
-  OwnershipTransferred
+  OwnershipTransferred,
 } from "../generated/schema"
+
+import { Contract } from '../generated/templates'
 
 export function handleNFTCreated(event: NFTCreatedEvent): void {
   let entity = new NFTCreated(
@@ -20,6 +22,9 @@ export function handleNFTCreated(event: NFTCreatedEvent): void {
   entity.transactionHash = event.transaction.hash
 
   entity.save()
+
+  // 创建Contract动态数据源实例
+  Contract.create(event.params.nftCA)
 }
 
 export function handleNFTRegesitered(event: NFTRegesiteredEvent): void {

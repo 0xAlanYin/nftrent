@@ -30,3 +30,29 @@ dataSources:
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
       file: ./src/nft-factory.ts
+templates:
+  - kind: ethereum/contract
+    name: Contract
+    network: sepolia
+    source:
+      abi: Contract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - ApprovalForAll
+        - Transfer
+        - TokenInfo
+      abis:
+        - name: Contract
+          file: ./abis/Contract.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/contract.ts
