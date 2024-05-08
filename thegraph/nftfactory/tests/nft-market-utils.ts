@@ -4,7 +4,7 @@ import {
   NFTCreated,
   NFTRegesitered,
   OwnershipTransferred
-} from "../generated/NFTFactory/NFTFactory"
+} from "../generated/NftMarket/NftMarket"
 
 export function createNFTCreatedEvent(nftCA: Address): NFTCreated {
   let nftCreatedEvent = changetype<NFTCreated>(newMockEvent())

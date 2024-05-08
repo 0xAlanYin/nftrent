@@ -8,9 +8,9 @@ import {
 } from "matchstick-as/assembly/index"
 import { Address } from "@graphprotocol/graph-ts"
 import { NFTCreated } from "../generated/schema"
-import { NFTCreated as NFTCreatedEvent } from "../generated/NFTFactory/NFTFactory"
-import { handleNFTCreated } from "../src/nft-factory"
-import { createNFTCreatedEvent } from "./nft-factory-utils"
+import { NFTCreated as NFTCreatedEvent } from "../generated/NftMarket/NftMarket"
+import { handleNFTCreated } from "../src/nft-market"
+import { createNFTCreatedEvent } from "./nft-market-utils"
 
 // Tests structure (matchstick-as >=0.5.0)
 // https://thegraph.com/docs/en/developer/matchstick/#tests-structure-0-5-0
