@@ -29,9 +29,6 @@ dataSources:
           handler: handleNFTRegesitered
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
-      callHandlers:
-        - function: deployNFT(string,string,string,uint256)
-          handler: handleDeployNFT
       file: ./src/nft-market.ts
 templates:
   - kind: ethereum

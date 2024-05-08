@@ -22,11 +22,9 @@ export function handleNFTCreated(event: NFTCreatedEvent): void {
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
   entity.transactionHash = event.transaction.hash
-
-  event.transaction.input
-
   entity.save()
 
+  // create datasource
   S2NFT.create(event.params.nftCA)
 }
 
@@ -59,18 +57,18 @@ export function handleOwnershipTransferred(
   entity.save()
 }
 
-export function handleDeployNFT(call: DeployNFTCall): void {
-  let entity = new NFTCreated(
-    call.transaction.hash.concatI32(call.transaction.index.toI32())
-  )
-  entity.nftCA = call.outputs.value0
-  entity.tokenURL = call.inputs.baseURI
-  entity.name = call.inputs.name
+// export function handleDeployNFT(call: DeployNFTCall): void {
+//   let entity = new NFTCreated(
+//     call.transaction.hash.concatI32(call.transaction.index.toI32())
+//   )
+//   entity.nftCA = call.outputs.value0
+//   entity.tokenURL = call.inputs.baseURI
+//   entity.name = call.inputs.name
 
-  entity.blockNumber = call.block.number
-  entity.blockTimestamp = call.block.timestamp
-  entity.transactionHash = call.transaction.hash
-  entity.save()
+//   entity.blockNumber = call.block.number
+//   entity.blockTimestamp = call.block.timestamp
+//   entity.transactionHash = call.transaction.hash
+//   entity.save()
 
-  S2NFT.create(call.outputs.value0)
-}
+//   S2NFT.create(call.outputs.value0)
+// }

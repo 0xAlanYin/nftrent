@@ -4,8 +4,6 @@ type NFTCreated @entity(immutable: true) {
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
-  tokenURL: String
-  name: String
 }
 
 type NFTRegesitered @entity(immutable: true) {
