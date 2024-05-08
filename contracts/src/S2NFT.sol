@@ -42,6 +42,7 @@ contract NFTFactory is Ownable(msg.sender) {
     event NFTRegesitered(address nftCA);
 
     mapping(address => bool) regesiteredNFTs;
+    
 
     function deployNFT(
         string memory name,
